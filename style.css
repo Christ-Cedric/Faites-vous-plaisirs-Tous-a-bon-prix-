@@ -172,7 +172,7 @@ footer
     width: 100%;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.4s;
+   
     z-index: 1000;
 }
 .navbar.visible {
@@ -183,6 +183,7 @@ footer
     margin: 0 15px;
     color: rgb(0, 0, 0);
     text-decoration: none;
+    background: none;
 }
 section
 {
@@ -785,11 +786,11 @@ p, h3, h4 {
 
     /* Hide navbar by default on mobile, show when .open is added */
     .navbar {
-        display: none;
+       
         flex-direction: column;
         align-items: center;
         width: 70%;
-        background: wheat;
+        background: rgb(255, 255, 255);
     }
     .navbar.open {
         display: flex;
@@ -805,16 +806,18 @@ p, h3, h4 {
     }
     .navbar a {
         display: flex;
-        left: 100%;
+        left: 10%;
         padding: 12px 15px;
         text-decoration: none;
         color: dark;
         align-items: left;
         background: none;
+
         transition: var(--transition);
     }
     .navbar a:hover {
         background: var(--light-bg);
+        width: 88%;
     }
     .navbar.active {
   display: flex; /* affiché quand menu ouvert */
