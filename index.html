@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faites vous plaisir.com</title>
+    <title>Ma Boutique en Ligne</title>
     <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+   
 
     <div class="container">
-        <a href="#navbar"><button class="menu-toggle" style="color: aliceblue; width: 100%;">
-            &#9776; Menu
-        </button></a>
+        <button class="menu-toggle" style="background: none; color: rgb(34, 192, 249);">☰</button>
+        <button class="fa-shopping-cart" ><i class="fa fa-shopping-cart "></i></button>
         <main>
             <div class="navbar" id="navbar">
                 <a href="#Services">Services</a>
@@ -19,7 +20,7 @@
                 <a href="#promotions">Promotions</a>
                 <a href="#temoignages">Témoignages</a>
                 <a href="#about">À Propos</a>
-                <a href="#panier">Panier</a>
+                
             </div>
             <h1>Bienvenue sur notre boutique en ligne</h1>
             <h1>Qu'est ce qui vous ferait plaisir</h1>
@@ -50,20 +51,23 @@
         <div class="produits-container">
             <div class="produit">
                 <img src="images/produit1.jpg" alt="Produit 1">
-                <h3>Produit 1</h3>
-                <p>Description du produit 1.</p>
+                <h3>Montre à aiguilles</h3>
+                <p>Montre élégante à aiguilles, idéale pour toutes les occasions.</p>
+                <p class="prix"  data-price="7500f"><Span style="font-weight: bold;">Prix :</Span> <span style="color: red; font-weight: bold;">7500f</span></p>
                 <button>Ajouter au Panier</button>
             </div>
             <div class="produit">
                 <img src="images/produit2.jpg" alt="Produit 2">
-                <h3>Produit 2</h3>
-                <p>Description du produit 2.</p>
+                <h3>Montre à aiguilles avec bracelet en cuir</h3>
+                <p>Montre élégante ornée de diamants, parfaite pour offrir ou se faire plaisir.</p>
+                <p class="prix"  data-price="9500f"><Span style="font-weight: bold;">Prix :</Span> <span style="color: red; font-weight: bold;">9500f</span></p>
                 <button>Ajouter au Panier</button>
             </div>
             <div class="produit">
                 <img src="images/produit3.jpg" alt="Produit 3">
-                <h3>Produit 3</h3>
-                <p>Description du produit 3.</p>
+                <h3>Montre à aiguilles dorée</h3>
+                <p>Montre élégante à aiguilles dorée, parfaite pour toutes les occasions.</p>
+                <p class="prix" data-price="7500f"> <Span style="font-weight: bold;">Prix :</Span> <span style="color: red; font-weight: bold;">7500f</span></p>
                 <button>Ajouter au Panier</button>
             </div>
         </div>
@@ -105,17 +109,20 @@
         <h2>À Propos de Nous</h2>
         <p>Nous sommes une boutique en ligne dédiée à offrir les meilleurs produits et services à nos clients.</p>
     </section>
-   <section id="panier">
-  <div class="container-panier">
+   <div id="panier">
     <h2>Panier</h2>
     <span class="close-btn" >&times;</span>
-    <div class="panier">
-      <p id="message-panier"></p>
-      <ul id="liste-panier">Vous n'avez pas d'articles dans votre panier.</ul>
-      <p id="total">Total: $0.00</p>
-      <p><button id="payer">Payer</button></p>
+    <div class="message-panier">
+      
+      <ul id="liste-panier">Vous n'avez pas d'articles dans votre panier .</ul>
     </div>
-  </div>
+        <p id="total" style="color: red; font-weight: bold;">Total: $0.00</p></p>
+      
+    <a href="https://wa.me/54515907?text=Je%20veux%20payer%20ma%20commande">
+  <button id="payer">Payer via WhatsApp</button>
+</a>
+
+   </div>
 
     <footer>
         <p>&copy; 2023 Votre Boutique en Ligne. Tous droits réservés.</p>
