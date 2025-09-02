@@ -311,13 +311,33 @@ html {
     right: 20px;
     z-index: 1001;
 }
-.menu-toggle span {
-    width: 100%;
-    height: 3px;
-    background-color: var(--text-color);
-    transition: var(--transition);
-    border-radius: 5px;
+
+.fa-shopping-cart {
+  font-size: 24px;
+  width: 30px;
+  height: 30px;
+  z-index: 1001;
+   right: 20px;
+   bottom: 25px;
+  position: fixed;
+  text-align: center;
+  line-height: 40px; /* pour centrer */
+  border-radius: 50%;
+  background: blueviolet;
+  background-position: center;
+  color: rgb(255, 255, 255);
+  transition: 0.3s ease; /* animation douce */
 }
+
+.fa-shopping-cart:hover {
+  background: rgb(154, 127, 180);
+  position: relative;
+    transform: scale(1.1);
+    cursor: pointer;
+   /* zoom sans casser le layout */
+}
+
+
 
 /* Hero Section */
 .container {
@@ -455,6 +475,7 @@ section h2::after {
 /* Produits */
 #produits {
     padding: 20px 0;
+   
 }
 .produits-container {
     display: flex;
@@ -602,16 +623,38 @@ section h2::after {
 
 /* Panier */
 
-#panier.open {
-    right: 0;
-}
-.panier-header {
+#panier {
+    
+     right: -650px;
+    position: fixed;
+    top: 0;
+   
+    width: 450px;
+    height: 100vh;
+    background: var(--white);
+    
+    z-index: 1002;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    padding: 20px;
+}
+  #panier.active {
+      right: 0;
+    }
+
+.message-panier
+{
+    height: 60vh;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: 80%;
+    margin: 5%;
+}
+.message-panier p{
+    display: flex;
     align-items: center;
-    margin-bottom: 30px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #eee;
+
 }
 .close-btn {
     font-size: 1.5rem;
@@ -622,8 +665,11 @@ section h2::after {
     color: var(--accent-color);
 }
 #liste-panier {
-    list-style: none;
-    margin-bottom: 20px;
+   
+   
+    width: 100%;
+    height: 100%;
+    
 }
 #liste-panier li {
     display: flex;
@@ -649,8 +695,10 @@ section h2::after {
     border-radius: 5px;
     cursor: pointer;
     transition: var(--transition);
-    width: 100%;
+    width: 40%;
     font-weight: 600;
+    text-align: center;
+   
 }
 #payer:hover {
     background: var(--secondary-color);
@@ -758,72 +806,76 @@ p, h3, h4 {
         transform: rotate(-45deg) translate(7px, -6px);
     }
 }
-@media (max-width: 768px) {
-    section {
-        padding: 60px 15px;
+@media (max-width: 728px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+       background: white;
+       color: black;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 70%;
+        height: 100vh;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        opacity: 1;
     }
-    .service, .produit, .promotion, .temoignage {
-        flex: 1 1 100%;
-        max-width: 100%;
+
+    .navbar.active {
+        transform: translateX(0);
     }
+
     .menu-toggle {
         display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        width: 30px;
-        height: 25px;
-        cursor: pointer;
         position: fixed;
         top: 20px;
         right: 20px;
         z-index: 1001;
-        transition: var(--transition);
-    }
-
-    #panier {
-        max-width: 100%;
-    }
-
-    /* Hide navbar by default on mobile, show when .open is added */
-    .navbar {
-       
+        cursor: pointer;
+        width: 30px;
+        height: 25px;
         flex-direction: column;
-        align-items: center;
-        width: 70%;
-        background: rgb(255, 255, 255);
+        justify-content: space-around;
     }
-    .navbar.open {
-        display: flex;
-    }
-    .navbar.hidden {
-        display: none;
-    }
-    .container button
-    {
-        width: 10%;
-        background: none;
-        margin-top: -5%;
-    }
-    .navbar a {
-        display: flex;
-        left: 10%;
-        padding: 12px 15px;
-        text-decoration: none;
-        color: dark;
-        align-items: left;
-        background: none;
 
-        transition: var(--transition);
+
+
+    .navbar a {
+        color: rgb(0, 0, 0);
+        margin: 20px 0;
+        font-size: 0.9rem;
+        text-decoration: none;
     }
     .navbar a:hover {
-        background: var(--light-bg);
-        width: 88%;
+        background: rgb(255, 255, 255);
+        border: #4a6cf7;
+        transition: background 0.3s ease;
+       color: rgb(0, 0, 0);
     }
-    .navbar.active {
-  display: flex; /* affiché quand menu ouvert */
 }
+    .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+    .message-panier
+    {
+        margin-left: 15%;
+        
+    }
+    #panier {
+        align-items: center;
+          
 
-}
+    }
+    #panier button
+    {
+        width: 90%;
+    }
 
 @media (max-width: 576px) {
     main {
